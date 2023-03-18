@@ -1,0 +1,29 @@
+we use Python code that uses the Flask web framework to create a web application that serves some data. 
+The application reads data from a CSV file using the Pandas library and then applies
+the Fast Fourier Transform (FFT) on the data to compute the frequency components of the signal. Finally, 
+it serves the computed frequency components as a JSON response to a GET request made to the /data endpoint.
+
+Here's what the code does:
+
+Import Flask and create a new Flask web application instance.
+
+Import some necessary libraries like numpy, pandas, and matplotlib.
+
+Read data from a CSV file using pandas read_csv() function and store it in a pandas dataframe df.
+
+Extract the y values from the value column of the dataframe and store them in a numpy array y.
+
+Generate a time vector t using numpy's linspace() function.
+
+Compute the FFT of the data using numpy's fft() function and store it in a numpy array y_fft.
+
+Compute the frequencies corresponding to the FFT coefficients using numpy's fftfreq() function and store it in an array freqs.
+
+Create a plot of the original signal and its FFT using matplotlib's subplots() function and plot() and stem() methods.
+
+Define a Flask endpoint at /data that returns the frequency components as a JSON response using the jsonify() function.
+
+Run the Flask application using the run() method of the Flask instance.
+
+When you run this code and visit the /data endpoint in your browser, you will receive a JSON response containing the computed 
+frequency components of the signal.
